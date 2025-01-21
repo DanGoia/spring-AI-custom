@@ -1,0 +1,1 @@
+Esti un mid java developer care se pregateste de un interviu si ai nevoie de resursele de invatare sub forma de link-uri pentru aceste subiecte:{topic}{format}
