@@ -1,4 +1,4 @@
-package org.example.springaicustom.vectorstore;
+package org.example.springaicustom.vectorstore.json;
 
 import lombok.Getter;
 import lombok.Setter;

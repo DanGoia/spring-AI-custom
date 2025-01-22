@@ -51,8 +51,8 @@ public class ZeroAndFewShotTests extends BaseTestClass{
     void zeroShotPromptTestWithModelOptions() {
 
         OpenAiChatOptions openAiChatOptions = new OpenAiChatOptions.Builder(openAiChatProperties.getOptions())
-                .withTemperature(0.1) //default is 0.7
-                .withModel("gpt-4-turbo-preview")
+                .temperature(0.1) //default is 0.7
+                .model("gpt-4-turbo-preview")
                 .build();
 
         // java for loop 3 times
