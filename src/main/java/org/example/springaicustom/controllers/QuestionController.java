@@ -1,5 +1,6 @@
 package org.example.springaicustom.controllers;
 
+import lombok.RequiredArgsConstructor;
 import org.example.springaicustom.model.Answer;
 import org.example.springaicustom.model.GetDeveloperRequest;
 import org.example.springaicustom.model.GetResponse;
@@ -8,16 +9,11 @@ import org.example.springaicustom.services.OpenAIService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
+@RequiredArgsConstructor
 @RestController
 public class QuestionController {
 
     private final OpenAIService openAIService;
-
-
-    public QuestionController(OpenAIService openAIService) {
-        this.openAIService = openAIService;
-    }
 
     @PostMapping("/ask")
     public Answer askQuestion(@RequestBody Question question) {
@@ -37,5 +33,10 @@ public class QuestionController {
     @PostMapping("/ask-developer-json")
     public GetResponse askDeveloperForJsonResponse(@RequestBody GetDeveloperRequest topic) {
         return openAIService.getJsonAnswer(topic);
+    }
+
+    @PostMapping("/ask-rag-data")
+    public Answer askDeveloperForJsonResponse(@RequestBody Question question) {
+        return openAIService.getRagAnswer(question);
     }
 }

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-AI-custom
+  #Pass API key as environment variable, e.g. -DOPENAI_API_KEY=your-api-key
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4o
+          temperature: '0'
+      embedding:
+        options:
+          model: text-embedding-3-small
+
+customaiapp:
+  aiapp:
+    vectorStorePath: src/main/resources/documents/vectorstore.json
+    documentsToLoad:
+      - classpath:documents/movie500.csv

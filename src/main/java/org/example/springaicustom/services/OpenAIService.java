@@ -10,4 +10,5 @@ public interface OpenAIService {
     Answer getAnswer(Question question);
     Answer getDeveloperAnswer(GetDeveloperRequest topic);
     Answer getFormatedDeveloperAnswer(GetDeveloperRequest topic);
+    Answer getRagAnswer(Question question);
 }
