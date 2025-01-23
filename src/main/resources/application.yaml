@@ -1,9 +1,8 @@
 spring:
   application:
     name: spring-AI-custom
-  #Pass API key as environment variable, e.g. -DOPENAI_API_KEY=your-api-key
   ai:
-    openai:
+     openai:
       api-key: ${OPENAI_API_KEY}
       chat:
         options:
@@ -12,7 +11,7 @@ spring:
       embedding:
         options:
           model: text-embedding-3-small
-    vectorstore:
+     vectorstore:
       milvus:
         client:
           host: "localhost"
@@ -24,15 +23,16 @@ spring:
         embeddingDimension: 1536
         indexType: IVF_FLAT
         metricType: COSINE
+        initialize-schema: true
 
 customaiapp:
   aiapp:
-    vectorStorePath: src/main/resources/documents/vectorstore.json
+    vectorStorePath: C:\\Users\\goia_\\Desktop\\projects\\spring-AI-custom\\src\\main\\resources\\documents\\vectorstore.json
     documentsToLoad:
       - classpath:documents/movie500.csv
   milvusaiapp:
     towDocumentsToLoad:
-      - src/main/resources/documents/towvehicles.txt
+      - classpath:/documents/towvehicles.txt
       # Sportsman 212 - Weight 3,458 lbs
       - https://yamahaoutboards.com/outboards/350-150-hp/in-line-4/f150-(i4)/pb_spt_open_212_f150xb_9-10-2020-occ
       # Sportsman 232 - Weight 5,001  lbs
@@ -41,3 +41,8 @@ customaiapp:
       - https://yamahaoutboards.com/outboards/xto-offshore/v8-5-6l/xf425/pb_spt_open-322_tw_lxf425usb2_8-26-2021_occ
       # Scout 380 LXF - Weight 19,443 lbs
       - https://yamahaoutboards.com/outboards/xto-offshore/v8-5-6l/xf425/pb_sct_380lxf_tr_xf425_8-30-2018_occ
+
+# What is a good truck to pull a Sportsman 212 boat? Expected answer: Chevy Traverse
+# What is a good truck to pull a Sportsman 232 boat? Expected answer: Chevy Colorado
+# What is a good truck to pull a Sportsman 322 boat? Expected answer: Chevy 2500
+# What is a good truck to pull a Scout 380 LXF boat? Expected answer: Chevy 3500 Duram

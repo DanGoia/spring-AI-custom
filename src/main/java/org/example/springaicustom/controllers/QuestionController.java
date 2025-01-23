@@ -36,7 +36,12 @@ public class QuestionController {
     }
 
     @PostMapping("/ask-rag-data")
-    public Answer askDeveloperForJsonResponse(@RequestBody Question question) {
+    public Answer askDeveloperRAGResponse(@RequestBody Question question) {
         return openAIService.getRagAnswer(question);
+    }
+
+    @PostMapping("/ask-boat-rag-data")
+    public Answer askDeveloperBoatRAGResponse(@RequestBody Question question) {
+        return openAIService.getMilvusRagAnswer(question);
     }
 }
