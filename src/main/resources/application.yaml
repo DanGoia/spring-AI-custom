@@ -30,6 +30,8 @@ customaiapp:
     vectorStorePath: C:\\Users\\goia_\\Desktop\\projects\\spring-AI-custom\\src\\main\\resources\\documents\\vectorstore.json
     documentsToLoad:
       - classpath:documents/movie500.csv
+  weather:
+    apiNinjasKey: ${API_NINJAS_KEY}
   milvusaiapp:
     towDocumentsToLoad:
       - classpath:/documents/towvehicles.txt
