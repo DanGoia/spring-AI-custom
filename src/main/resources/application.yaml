@@ -27,7 +27,7 @@ spring:
 
 customaiapp:
   aiapp:
-    vectorStorePath: C:\\Users\\goia_\\Desktop\\projects\\spring-AI-custom\\src\\main\\resources\\documents\\vectorstore.json
+    vectorStorePath: C:\\Users\\dan.goia\\OneDrive - ACCESA\\Desktop\\work_projects\\spring-AI-custom\\spring-AI-custom\\src\\main\\resources\\documents\\vectorstore.json
     documentsToLoad:
       - classpath:documents/movie500.csv
   weather:
